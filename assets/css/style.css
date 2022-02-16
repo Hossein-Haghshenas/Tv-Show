@@ -31,6 +31,7 @@ header {
   padding: 0.9rem;
 }
 body {
+  background: #000;
   font-family: "Roboto", sans-serif;
 }
 .header-logo {
@@ -45,13 +46,14 @@ body {
   left: -1rem;
   width: 12rem;
   background: #000;
+  z-index: 100000;
 }
 .menu-burger ul li {
   margin: 1.5rem 1rem !important;
 }
 .menu-burger li a,
 .header-menu li a {
-  margin: 0 0.5rem;
+  margin: 0 0.4rem;
   color: aliceblue;
   position: relative;
   letter-spacing: 1px;
@@ -65,7 +67,9 @@ body {
   width: 0;
   background: rgb(255, 0, 0);
   transition: all 1s ease-in-out;
+  box-shadow: 2px -8px 10px 3px rgb(255 0 0 / 39%);
 }
+
 .header-menu a:hover:before {
   width: 100%;
 }
@@ -81,4 +85,123 @@ body {
 }
 .header-login a:hover {
   background-color: rgb(255, 0, 0);
+}
+
+/* carousel style*/
+.Home-carousel {
+  background: #000;
+  justify-content: space-between;
+  align-items: center;
+  height: 35.66rem;
+}
+.carousel-tv {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  z-index: 10;
+}
+.carousel-tv-image {
+  position: absolute;
+  top: 0;
+  width: 30rem;
+  height: 22rem;
+}
+.carousel-tv-video {
+  position: absolute;
+  top: 37px;
+  width: 22rem;
+  height: 16.5rem;
+  z-index: -10;
+}
+
+.carousel-searchbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 10rem;
+}
+
+.carousel-searchbar input {
+  width: 30vw;
+  min-width: 15rem;
+  height: 2.5rem;
+  padding: 1rem 2.2rem;
+  border-radius: 1rem;
+  z-index: 100;
+}
+.carousel-searchbar input:-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+}
+.searchbar-icon {
+  position: absolute;
+  top: 12px;
+  left: 1vw;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.searchbar-icon:hover {
+  color: rgb(185, 0, 0);
+}
+
+@media (min-width: 900px) {
+  .carousel-tv {
+    width: 18rem;
+    height: 18rem;
+    margin-bottom: 15rem;
+  }
+
+  .carousel-tv-image {
+    width: 35rem;
+    height: 25rem;
+  }
+  .carousel-tv-video {
+    top: 65px;
+    left: -63px;
+    width: 25.5rem;
+    height: 16rem;
+  }
+}
+@media (max-width: 770px) {
+  .Home-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-searchbar {
+    width: 20rem;
+    margin-bottom: 5rem;
+  }
+  .carousel-searchbar h1 {
+    text-align: center;
+    margin-top: 22rem;
+  }
+  .carousel-searchbar input {
+    min-width: 20rem;
+  }
+  .searchbar-icon {
+    left: 1.7vw;
+  }
+}
+@media (max-width: 500px) {
+  .carousel-tv {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .carousel-tv-image {
+    width: 20rem;
+    height: 15rem;
+  }
+  .carousel-tv-video {
+    width: 14.7rem;
+    height: 10rem;
+  }
+  .carousel-searchbar h1 {
+    margin-top: 0;
+  }
 }
