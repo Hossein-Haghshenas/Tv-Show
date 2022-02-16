@@ -42,7 +42,7 @@
               <a href="#"><i class="fa fa-video me-1"></i> Movies</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-person me-1"></i> About Us</a>
+              <a href="#"><i class="fa fa-user me-1"></i> Contact Us</a>
             </li>
           </ul>
         </section>
@@ -57,7 +57,7 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">TV Shows</a></li>
           <li><a href="#">Movies</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
       <section class="header-login">
@@ -65,7 +65,32 @@
       </section>
     </header>
     <main>
-      <section class="Home-carousel"></section>
+      <section
+        class="Home-carousel position-relative d-md-flex flex-md-row justify-content-md-around"
+      >
+        <section class="carousel-tv col-md-8">
+          <img class="carousel-tv-image" src="./assets/image/tv-e.png" alt="" />
+          <video class="carousel-tv-video" muted autoplay loop>
+            <source src="./assets/image/Game of Thrones.mp4" type="video/mp4" />
+          </video>
+        </section>
+        <section class="carousel-searchbar col-md-4">
+          <section class="carousel-searchbar-title">
+            <h1 class="text-white text-uppercase">
+              <span class="text-danger">Find</span> your favorite movie among
+              thousands of movies
+            </h1>
+          </section>
+          <section class="position-relative">
+            <i class="fa fa-search searchbar-icon"></i>
+            <input
+              type="text"
+              class="position-absolute searchbar"
+              placeholder="Type Here..."
+            />
+          </section>
+        </section>
+      </section>
     </main>
     <footer></footer>
 
