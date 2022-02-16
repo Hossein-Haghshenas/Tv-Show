@@ -69,7 +69,11 @@
         class="Home-carousel position-relative d-md-flex flex-md-row justify-content-md-around"
       >
         <section class="carousel-tv col-md-8">
-          <img class="carousel-tv-image" src="./assets/image/tv-e.png" alt="" />
+          <img
+            class="carousel-tv-image"
+            src="./assets/image/tv-e.png"
+            alt="tv"
+          />
           <video class="carousel-tv-video" muted autoplay loop>
             <source src="./assets/image/Game of Thrones.mp4" type="video/mp4" />
           </video>
@@ -84,9 +88,81 @@
           <section class="position-relative">
             <i class="fa fa-search searchbar-icon"></i>
             <input
+              type="search"
               type="text"
               class="position-absolute searchbar"
               placeholder="Type Here..."
+            />
+          </section>
+        </section>
+      </section>
+
+      <!-- select episode section -->
+
+      <section
+        class="episode-section d-flex flex-column-reverse flex-md-row mt-md-0"
+      >
+        <section class="episode-inputs col-md-6 text-center my-md-3">
+          <section class="text-uppercase text-white">
+            <h2>Watch <span class="text-danger">now</span></h2>
+          </section>
+          <section class="text-white">
+            <section class="episode-search-box mb-2">
+              <input
+                type="search"
+                name=""
+                id="episode-search"
+                placeholder="Search"
+              />
+            </section>
+
+            <span>Or</span>
+
+            <section class="episode-select-box mt-2">
+              <select id="episode-select">
+                <option value="">select</option>
+                <option value="">dfgfdgfdgfdgfgfdgfdgfdg</option>
+              </select>
+            </section>
+          </section>
+        </section>
+        <section class="episode-cover col-md-6">
+          <img src="./assets/image/episode-cover.jpg" alt="episode-cover" />
+        </section>
+      </section>
+
+      <!-- episode carts section -->
+
+      <section class="episode-carts">
+        <section class="row col-12 col-md-6">
+          <section class="episode-card col-12 col-md-6">
+            <img
+              class="img-fluid"
+              src="./assets/image/episode-cover.jpg"
+              alt=""
+            />
+          </section>
+          <section class="episode-card col-12 col-md-6">
+            <img
+              class="img-fluid"
+              src="./assets/image/episode-cover.jpg"
+              alt=""
+            />
+          </section>
+        </section>
+        <section class="row col-12 col-md-6">
+          <section class="episode-card col-12 col-md-6">
+            <img
+              class="img-fluid"
+              src="./assets/image/episode-cover.jpg"
+              alt=""
+            />
+          </section>
+          <section class="episode-card col-12 col-md-6">
+            <img
+              class="img-fluid"
+              src="./assets/image/episode-cover.jpg"
+              alt=""
             />
           </section>
         </section>
