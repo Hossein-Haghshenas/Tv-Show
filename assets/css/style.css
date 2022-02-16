@@ -146,6 +146,43 @@ body {
   color: rgb(185, 0, 0);
 }
 
+/* episode section style */
+
+.episode-section {
+  justify-content: space-between;
+  align-items: center;
+  height: 30rem;
+  margin-top: 2rem;
+}
+.episode-cover {
+  display: flex;
+  justify-content: center;
+}
+.episode-cover img {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 15px;
+}
+.episode-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.episode-select-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#episode-select,
+#episode-search {
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+/* Responsive setting */
+
 @media (min-width: 900px) {
   .carousel-tv {
     width: 18rem;
@@ -185,6 +222,10 @@ body {
   }
   .searchbar-icon {
     left: 1.7vw;
+  }
+  .episode-cover img {
+    width: 20rem;
+    height: 20rem;
   }
 }
 @media (max-width: 500px) {
