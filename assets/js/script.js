@@ -14,11 +14,12 @@ const apiUrl = "https://api.tvmaze.com/shows/82/episodes";
 
 const getData = async () => {
   try {
-    const data = await axios.get(apiUrl);
-    let information = data.data;
+    const information = await axios.get(apiUrl);
+    const data = information.data;
 
-    selectOption(information);
-    addCart(information);
+    selectOption(data);
+    addCart(data);
+    filterWithSearch(data);
   } catch (error) {
     console.log(error);
   }
@@ -110,12 +111,43 @@ const addCart = (data) => {
 
     // create & config card text section
 
+    const newCardText = document.createElement("section");
+    newCardText.className = "card-text";
+
+    const cardTextSummery = document.createElement("p");
+    cardTextSummery.innerHTML = item.summary;
+
+    newCardText.appendChild(cardTextSummery);
+
     // append all sections
     newCardFooter.append(cardFooterStar, cardFooterWatch);
     newCardInfo.append(newCardImg, newCardFooter);
-    newCard.append(newCardTitle, newCardInfo);
+    newCard.append(newCardTitle, newCardInfo, newCardText);
     cardsContainer.append(newCard);
   }
 };
 
-/* Create Watch-now btn  */
+/* Create filter with Search-box  */
+
+const filterWithSearch = (data) => {
+  const episodeSearch = document.getElementById("episode-search");
+  const cardsContainer = document.querySelectorAll(".card-title");
+  episodeSearch.addEventListener("input", () => {
+    for (const section of cardsContainer) {
+      for (const h5 of section.children) {
+        if (
+          h5.textContent
+            .toLowerCase()
+            .includes(episodeSearch.value.toLowerCase())
+        ) {
+          h5.parentElement.parentElement.classList.remove("d-none");
+        } else {
+          section.parentElement.classList.add("d-none");
+        }
+      }
+    }
+    /* Array.from(cardsContainer).map((elem) => {
+      console.log(elem);
+    }); */
+  });
+};
