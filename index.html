@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favIcon.ico" type="image/x-icon" />
     <!-- font-awesome css-->
     <link
       rel="stylesheet"
@@ -26,6 +27,8 @@
   </head>
   <body>
     <header>
+      <!-- Create menu-burger for responsive design -->
+
       <section class="header-menu-burger d-sm-none position-relative">
         <span id="menu-burger-icon">
           <i class="fa fa-list text-white menu-burger-icon"></i>
@@ -47,11 +50,17 @@
           </ul>
         </section>
       </section>
+
+      <!-- Create header-logo -->
+
       <section class="header-logo">
         <span class="text-white"
           >Best <span class="text-danger">Movies</span></span
         >
       </section>
+
+      <!-- Create navabar for header -->
+
       <nav class="header-menu d-none d-sm-block">
         <ul class="d-flex">
           <li><a href="#">Home</a></li>
@@ -60,6 +69,9 @@
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
+
+      <!-- Create header login btn-->
+
       <section class="header-login">
         <a href="#">Register</a>
       </section>
@@ -68,6 +80,8 @@
       <section
         class="Home-carousel position-relative d-md-flex flex-md-row justify-content-md-around"
       >
+        <!-- Home carousel tv section-->
+
         <section class="carousel-tv col-md-8">
           <img
             class="carousel-tv-image"
@@ -78,6 +92,9 @@
             <source src="./assets/image/Game of Thrones.mp4" type="video/mp4" />
           </video>
         </section>
+
+        <!-- Home carousel SearchBar-->
+
         <section class="carousel-searchbar col-md-4">
           <section class="carousel-searchbar-title">
             <h1 class="text-white text-uppercase">
@@ -107,6 +124,8 @@
             <h2>Watch <span class="text-danger">now</span></h2>
           </section>
           <section class="text-white">
+            <!-- filter with searchBar-->
+
             <section class="episode-search-box mb-2">
               <input
                 type="search"
@@ -117,6 +136,8 @@
             </section>
             <span>Or</span>
 
+            <!-- filter with selectBox-->
+
             <section class="episode-select-box mt-2">
               <select id="episode-select">
                 <option value="allEpisode">All episode</option>
@@ -124,56 +145,24 @@
             </section>
           </section>
         </section>
+
+        <!-- select episode image -->
+
         <section class="episode-cover col-md-6">
           <img src="./assets/image/episode-cover.jpg" alt="episode-cover" />
         </section>
       </section>
 
-      <!-- episode cards section -->
+      <!-- episodes cards container -->
 
-      <section class="episode-cards-container">
-        <section class="episode-card col-8 col-md-3 col-sm-6 mt-sm-0 my-3">
-          <section class="card-title">
-            <h3>hi</h3>
-          </section>
-          <section class="card-info position-relative">
-            <img
-              class="card-img"
-              src="./assets/image/episode-cover.jpg"
-              alt=""
-            />
-            <section class="card-footer">
-              <section class="card-footer-star">
-                <i class="fa fa-star text-warning"></i><span> 8.5</span>
-              </section>
-              <section class="card-footer-watch">
-                <i class="fa fa-play-circle"></i>
-                <a> Watch now</a>
-              </section>
-            </section>
-          </section>
-          <section class="card-text">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-              autem distinctio debitis, nostrum fugit animi cumque iusto dolorum
-              aut impedit modi minus, esse obcaecati sit similique laborum sint
-              totam! Consequuntur.
-            </p>
-          </section>
-        </section>
-        <section class="episode-card col-8 col-md-3 col-sm-6 mt-sm-0 my-3">
-          <img class="card-img" src="./assets/image/episode-cover.jpg" alt="" />
-        </section>
-
-        <section class="episode-card col-8 col-md-3 col-sm-6 mt-sm-0 my-3">
-          <img class="card-img" src="./assets/image/episode-cover.jpg" alt="" />
-        </section>
-        <section class="episode-card col-8 col-md-3 col-sm-6 mt-sm-0 my-3">
-          <img class="card-img" src="./assets/image/episode-cover.jpg" alt="" />
-        </section>
-      </section>
+      <section class="episode-cards-container"></section>
     </main>
-    <footer></footer>
+
+    <footer>
+      <a href="https://www.instagram.com/Hossein_developer"
+        >Created By HosseinDeveloper</a
+      >
+    </footer>
     <!-- axios scripts-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
