@@ -179,6 +179,7 @@ body {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   text-align: center;
+  width: 20rem;
 }
 
 /* episode cards style*/
@@ -192,6 +193,15 @@ body {
 .episode-card {
   width: 18rem;
   margin: 0 1rem;
+  z-index: 1000;
+  position: relative;
+}
+.card-title {
+  position: absolute;
+  bottom: 2.3rem;
+  width: 100%;
+  text-align: center;
+  color: aliceblue;
   z-index: 1000;
 }
 .card-img {
@@ -208,22 +218,29 @@ body {
   align-items: baseline;
   background: rgba(0, 0, 0, 0.438);
   color: rgb(255, 255, 255);
+  border-radius: 0 0 1rem 1rem !important;
   font-size: 1.3rem;
   width: 100%;
   z-index: 100;
+  transition: all 0.7s ease-in;
 }
-.watch-now-card {
+.card-footer:hover {
+  background: rgba(0, 0, 0, 0.527);
+  box-shadow: 0px 1px 1px 0px rgba(255, 0, 0, 0.26);
+}
+.card-footer-watch {
   cursor: pointer;
   overflow: hidden;
   width: 1.5rem;
   height: 1.6rem;
   transition: all 0.8s ease-in;
 }
-.watch-now-card:hover {
+.card-footer-watch:hover {
   width: 7rem;
 }
-.watch-now-card a {
+.card-footer-watch a {
   font-size: 1rem;
+  color: red !important;
 }
 /* Responsive setting */
 
