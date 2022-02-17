@@ -8,7 +8,7 @@ burgerBtn.addEventListener("click", function () {
   this.firstElementChild.classList.toggle("text-red");
 });
 
-/* get information from serve */
+/* get information from server */
 
 const apiUrl = "https://api.tvmaze.com/shows/82/episodes";
 
@@ -20,6 +20,7 @@ const getData = async () => {
     selectOption(data);
     addCart(data);
     filterWithSearch(data);
+    filterWithSelectOption(data);
   } catch (error) {
     console.log(error);
   }
@@ -45,7 +46,7 @@ const selectOption = (data) => {
   }
 };
 
-/* Create cards */
+/* Create & config cards & append into the conainer*/
 
 const addCart = (data) => {
   const cardsContainer = document.querySelector(".episode-cards-container");
@@ -54,6 +55,7 @@ const addCart = (data) => {
 
     const newCard = document.createElement("section");
     newCard.className = "episode-card col-8 col-md-3 col-sm-6 mt-sm-0 my-3";
+    newCard.setAttribute("id", item.id);
 
     // create & config cards title
 
@@ -132,6 +134,7 @@ const addCart = (data) => {
 const filterWithSearch = (data) => {
   const episodeSearch = document.getElementById("episode-search");
   const cardsContainer = document.querySelectorAll(".card-title");
+
   episodeSearch.addEventListener("input", () => {
     for (const section of cardsContainer) {
       for (const h5 of section.children) {
@@ -146,8 +149,24 @@ const filterWithSearch = (data) => {
         }
       }
     }
-    /* Array.from(cardsContainer).map((elem) => {
-      console.log(elem);
-    }); */
+  });
+};
+
+/* Create filter with SelectOption  */
+
+const filterWithSelectOption = (data) => {
+  const episodeSelectOption = document.getElementById("episode-select");
+  const cardsContainer = document.querySelectorAll(".episode-card");
+
+  episodeSelectOption.addEventListener("change", () => {
+    for (const card of cardsContainer) {
+      if (card.id === episodeSelectOption.value) {
+        card.classList.remove("d-none");
+      } else if (episodeSelectOption.value === "allEpisode") {
+        card.classList.remove("d-none");
+      } else {
+        card.classList.add("d-none");
+      }
+    }
   });
 };
