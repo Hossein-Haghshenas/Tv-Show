@@ -21,6 +21,7 @@ const getData = async () => {
     addCart(data);
     filterWithSearch(data);
     filterWithSelectOption(data);
+    episodCounter();
   } catch (error) {
     console.log(`Something went wrong ${error}`);
   }
@@ -151,6 +152,7 @@ const filterWithSearch = (data) => {
         } else {
           section.parentElement.classList.add("d-none");
         }
+        episodCounter();
       }
     }
   });
@@ -182,4 +184,20 @@ const addZero = (seasonData, episodesData) => {
   const number = episodesData < 10 ? `0${episodesData}` : `${episodesData}`;
 
   return `S${season}E${number}`;
+};
+
+/* episodes counter */
+
+const episodCounter = () => {
+  const counterDisplay = document.getElementById("episod-counter-display");
+  const allEpisodes = document.querySelector(
+    ".episode-cards-container"
+  ).childElementCount;
+  const displayedEpisodes = document.querySelectorAll(".episode-card");
+
+  const filtered = Array.from(displayedEpisodes).filter(
+    (elem) => !elem.classList.contains("d-none")
+  ).length;
+
+  counterDisplay.textContent = `${filtered}/${allEpisodes} Episodes`;
 };
