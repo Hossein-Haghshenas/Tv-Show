@@ -181,7 +181,7 @@ body {
 .episode-select-box {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 #episode-select,
