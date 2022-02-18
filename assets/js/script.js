@@ -22,7 +22,7 @@ const getData = async () => {
     filterWithSearch(data);
     filterWithSelectOption(data);
   } catch (error) {
-    console.log(error);
+    console.log(`Something went wrong ${error}`);
   }
 };
 
@@ -37,10 +37,9 @@ const selectOption = (data) => {
 
     newOption.setAttribute("value", item.id);
 
-    const season = item.season < 10 ? `0${item.season}` : `${item.season}`;
-    const number = item.number < 10 ? `0${item.number}` : `${item.number}`;
-
-    newOption.textContent = `S${season}E${number} - ${item.name}`;
+    newOption.textContent = `${addZero(item.season, item.number)} - ${
+      item.name
+    }`;
 
     select.append(newOption);
   }
@@ -116,10 +115,15 @@ const addCart = (data) => {
     const newCardText = document.createElement("section");
     newCardText.className = "card-text";
 
-    const cardTextSummery = document.createElement("p");
+    const cardTextSeason = document.createElement("span");
+
+    cardTextSeason.textContent = `${addZero(item.season, item.number)}`;
+
+    const cardTextSummery = document.createElement("span");
+
     cardTextSummery.innerHTML = item.summary;
 
-    newCardText.appendChild(cardTextSummery);
+    newCardText.append(cardTextSeason, cardTextSummery);
 
     // append all sections
     newCardFooter.append(cardFooterStar, cardFooterWatch);
@@ -169,4 +173,13 @@ const filterWithSelectOption = (data) => {
       }
     }
   });
+};
+
+/* Add Zero for seasons and episodes  */
+
+const addZero = (seasonData, episodesData) => {
+  const season = seasonData < 10 ? `0${seasonData}` : `${seasonData}`;
+  const number = episodesData < 10 ? `0${episodesData}` : `${episodesData}`;
+
+  return `S${season}E${number}`;
 };
